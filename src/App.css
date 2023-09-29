@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  padding: 40px 0;
+  width: 500px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -35,4 +39,48 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button {
+  border: none;
+  padding: 14px 24px;
+  color: white;
+  background-color: #61dafb;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.text-input {
+  outline: none;
+  padding: 8px 10px;
+  width: 100%;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.content {
+  padding: 20px 0px;
+}
+
+.todo {
+  display: flex;
+  gap: 0 6px;
+  margin-bottom: 16px;
+}
+
+.todo-checkbox {
+  height: 20px;
+  width: 20px;
+}
+
+.todo-title {
+  color: #333;
 }

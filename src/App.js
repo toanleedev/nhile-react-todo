@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
+import TextInput from './components/TextInput';
+import Todo from './components/Todo';
 
 function App() {
+  const todos = [
+    {
+      id: 1,
+      title: 'Todo list app',
+    },
+    {
+      id: 2,
+      title: 'Cooking',
+    },
+    {
+      id: 3,
+      title: 'Learn something',
+    },
+    {
+      id: 4,
+      title: 'Read a book',
+    },
+
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='header'>
+        <TextInput />
+        <Button name={'Add'} />
+      </div>
+      <div className='content'>
+        {todos.map(todo => (
+          <Todo title={todo.title} key={todo.id}/>
+        ))}
+      </div>
     </div>
   );
 }
