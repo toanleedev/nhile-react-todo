@@ -84,3 +84,24 @@
 .todo-title {
   color: #333;
 }
+
+.light-button {
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.light-container {
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+  margin-bottom: 40px;
+}
+
+.light {
+  width: 15px;
+  height: 15px;
+  border-radius: 100rem;
+  border: 1px solid #333;
+}
