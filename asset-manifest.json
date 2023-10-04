@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/toanleedev/nhile-react-todo/static/css/main.d1bd638a.css",
-    "main.js": "/toanleedev/nhile-react-todo/static/js/main.b5599fbc.js",
-    "index.html": "/toanleedev/nhile-react-todo/index.html",
-    "main.d1bd638a.css.map": "/toanleedev/nhile-react-todo/static/css/main.d1bd638a.css.map",
-    "main.b5599fbc.js.map": "/toanleedev/nhile-react-todo/static/js/main.b5599fbc.js.map"
+    "main.css": "/nhile-react-todo/static/css/main.d1bd638a.css",
+    "main.js": "/nhile-react-todo/static/js/main.b5599fbc.js",
+    "index.html": "/nhile-react-todo/index.html",
+    "main.d1bd638a.css.map": "/nhile-react-todo/static/css/main.d1bd638a.css.map",
+    "main.b5599fbc.js.map": "/nhile-react-todo/static/js/main.b5599fbc.js.map"
   },
   "entrypoints": [
     "static/css/main.d1bd638a.css",
