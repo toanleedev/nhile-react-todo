@@ -16,6 +16,9 @@ function TodoList() {
   };
 
   const handleAddTodo = () => {
+    if (todoInput.trim().length <= 0) {
+      return;
+    }
     const newTodos = [{ id: Date.now(), title: todoInput }, ...todos];
     setTodos(newTodos);
     localStorage.setItem('todos', JSON.stringify(newTodos));
