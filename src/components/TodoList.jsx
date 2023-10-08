@@ -18,7 +18,6 @@ function TodoList() {
     }
     const newTodos = [{ id: Date.now(), title: todoInput }, ...todos];
     setTodos(newTodos);
-    localStorage.setItem('todos', JSON.stringify(newTodos));
     setTodoInput('');
     document.querySelector('.text-input').focus();
   };
