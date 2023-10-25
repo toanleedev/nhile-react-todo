@@ -24,7 +24,7 @@ function TodoList() {
 
   return (
     <div>
-      <h3>Todo list</h3>
+      <h3 className='text-2xl font-bold'>Todo list</h3>
       <div className='header'>
         <TextInput onChange={handleInputChange} value={todoInput} />
         <Button name={'Add'} onClick={handleAddTodo} />

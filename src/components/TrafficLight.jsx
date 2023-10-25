@@ -16,7 +16,7 @@ function TrafficLight() {
 
   return (
     <div>
-      <h3>Traffic light</h3>
+      <h3 className='text-2xl font-bold'>Traffic light</h3>
       <button className='light-button' onClick={handleNext}>
         Next
       </button>
