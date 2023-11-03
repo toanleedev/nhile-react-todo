@@ -4,47 +4,62 @@ import { useForm } from 'react-hook-form';
 import yup from '../helpers/yupGlobal';
 
 const schema = yup.object().shape({
-  email: yup.string().required('Required').email('Email invalid'),
-  pass: yup.string().required('Required').password('Password invalid'),
+  email: yup.string().required('Email is required').email('Email invalid'),
+  password: yup
+    .string()
+    .required('Password is required')
+    .min(8, 'Password is too short - should be 8 chars minimum.')
 });
 
-function Login({ handleLogin }) {
+function Login({ handleLogin, resError }) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: 'onTouched',
+    resolver: yupResolver(schema),
+  });
 
   return (
-    <div>
+    <div className=''>
       <form onSubmit={handleSubmit(handleLogin)} className='box'>
         <h1 className='text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 mb-5'>
           LOGIN
         </h1>
+        {resError && (
+          <div className='px-[10px] py-3 mb-3 bg-red-100 rounded text-red-800 text-left'>
+            {resError}
+          </div>
+        )}
         <div className='input-field'>
           <input
             placeholder='Email'
-            className='block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mb-2'
-            {...register('email', {
-              required: 'Email is required',
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: 'Invalid email address',
-              },
-            })}
+            className={`${
+              errors.email ? 'focus:ring-red-500 ring-red-500' : ''
+            } block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mb-2`}
+            {...register('email')}
           />
-          {errors.email && <p className='error'>{errors.email.message}</p>}
+          {errors.email && (
+            <p className='text-red-400 mb-5 text-left'>
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div className='input-field'>
           <input
             type='password'
-            className='block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mb-3'
+            className={`${
+              errors.password ? 'focus:ring-red-500 ring-red-500' : ''
+            } block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 mb-3`}
             placeholder='Password'
             autoComplete='off'
-            {...register('password', { required: true })}
+            {...register('password')}
           />
           {errors.password && (
-            <p className='error'>{errors.password.message}</p>
+            <p className='text-red-400 mb-5 text-left'>
+              {errors.password.message}
+            </p>
           )}
         </div>
         <button
