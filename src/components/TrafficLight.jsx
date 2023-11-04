@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Light from './Light';
 
 function TrafficLight() {

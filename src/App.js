@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-
-import TrafficLight from './components/TrafficLight';
-import TodoList from './components/TodoList';
-import Login from './components/Login';
 import axios from 'axios';
+import { useState } from 'react';
+
+import './App.css';
+import Login from './components/Login';
+import TodoList from './components/TodoList';
+import TrafficLight from './components/TrafficLight';
 
 function App() {
   const [user, setUser] = useState();

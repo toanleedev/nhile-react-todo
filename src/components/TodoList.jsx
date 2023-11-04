@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
+import useLocalStorage from '../hooks/useLocalStorage';
 import Button from './Button';
 import TextInput from './TextInput';
 import Todo from './Todo';
-import useLocalStorage from '../hooks/useLocalStorage';
 
 function TodoList() {
   const [todos, setTodos] = useLocalStorage('todos', []);
